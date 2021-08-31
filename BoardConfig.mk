@@ -166,6 +166,9 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
     device/qcom/sepolicy/generic/public \
     device/qcom/sepolicy/qva/public
 
+# Surfaceflinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # UEFI
 TARGET_USES_UEFI := true
 
