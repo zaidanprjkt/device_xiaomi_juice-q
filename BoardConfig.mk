@@ -32,6 +32,9 @@ TARGET_OTA_ASSERT_DEVICE := lime,citrus,lemon,pomelo,juice
 TARGET_BOARD_PLATFORM := bengal
 TARGET_BOOTLOADER_BOARD_NAME := bengal
 
+# Camera
+TARGET_USES_QTI_CAMERA_DEVICE := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
