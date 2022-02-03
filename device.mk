@@ -47,6 +47,20 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Telephony
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext \
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext \
+    android.hidl.manager-V1.0-java
+
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 29
 
