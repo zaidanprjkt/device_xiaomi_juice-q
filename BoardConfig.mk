@@ -138,6 +138,9 @@ BUILD_WITHOUT_VENDOR := true
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
 BOARD_USES_QCOM_HARDWARE := true
 
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
