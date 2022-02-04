@@ -46,6 +46,9 @@ extern "C" {
 #define MSMDCVS_GOVERNOR "msm-dcvs"
 #define SCHEDUTIL_GOVERNOR "schedutil"
 
+#define INPUT_SYSFS_WAKUP_MODE_OFF 0
+#define INPUT_SYSFS_WAKUP_MODE_ON 1
+
 #define HINT_HANDLED (0)
 #define HINT_NONE (-1)
 
