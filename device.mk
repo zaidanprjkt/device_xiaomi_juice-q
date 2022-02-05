@@ -27,6 +27,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     BluetoothQti
 
+# Camera
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.camera.device@1.0
+
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
