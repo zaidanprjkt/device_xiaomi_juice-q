@@ -68,6 +68,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.juice
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.juice
