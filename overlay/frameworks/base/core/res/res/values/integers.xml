@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Integer indicating maximum hardware supported client number of soft ap -->
+     <integer name="config_wifiHardwareSoftapMaxClientCount">32</integer>
+
+    <!-- Integer thresholds, do not connect to APs with RSSI lower than these values  -->
+     <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-83</integer>
+     <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-80</integer>
+
+    <!-- Integer thresholds for low network score, should be somewhat less than the entry thresholds -->
+     <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_24GHz">-73</integer>
+     <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_5GHz">-70</integer>
+
+    <!-- Integer delay in milliseconds before set wlan interface up during watchdog recovery -->
+     <integer name="config_wifi_framework_recovery_timeout_delay">3000</integer>
+</resources>
