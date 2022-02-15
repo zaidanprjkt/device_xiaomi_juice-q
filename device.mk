@@ -77,6 +77,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.juice
 
+# RemovePackages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Sensors
 PRODUCT_PACKAGES += \
     libsensorndkbridge \
