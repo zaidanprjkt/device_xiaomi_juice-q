@@ -20,6 +20,10 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaacwrapper
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    BluetoothQti
+
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
