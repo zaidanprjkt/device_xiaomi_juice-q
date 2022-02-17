@@ -42,6 +42,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/configs/bluetooth/include
+TARGET_USE_QTI_BT_STACK := true
 
 # Bootloader
 TARGET_BOARD_PLATFORM := bengal
