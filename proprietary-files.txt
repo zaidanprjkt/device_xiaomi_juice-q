@@ -10,6 +10,10 @@ product/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 product/lib/com.qualcomm.qti.ant@1.0.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
 
+# Bluetooth (aptX)
+product/lib64/libaptXHD_encoder.so
+product/lib64/libaptX_encoder.so
+
 # CNE
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
