@@ -15,6 +15,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+PRODUCT_BUILD_SUPER_PARTITION := false
+BOARD_BUILD_PRODUCT_IMAGE := true
+PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_TARGET_VNDK_VERSION := 29
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService
@@ -37,11 +43,6 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libqdMetaData \
     libqdMetaData.system
-
-# Dynamic partitions setup
-BOARD_BUILD_PRODUCT_IMAGE := true
-PRODUCT_BUILD_SUPER_PARTITION := false
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -104,9 +105,6 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge \
     android.hardware.sensors@2.0-service.multihal
 
-# Shipping level
-PRODUCT_SHIPPING_API_LEVEL := 29
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
@@ -124,9 +122,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext \
     android.hidl.manager-V1.0-java
-
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 29
 
 # Vendor Overlay
 PRODUCT_COPY_FILES += \
