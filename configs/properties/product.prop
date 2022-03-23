@@ -25,7 +25,7 @@ dalvik.vm.dex2oat64.enabled=true
 drm.service.enabled=true
 
 # Media
-ro.config.media_vol_steps=15
+ro.config.media_vol_steps=8
 vendor.audio.offload.buffer.size.kb=256
 
 # Power-saving props
