@@ -1,137 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-**
-** Copyright 2009, The Android Open Source Project
-**
-** Licensed under the Apache License, Version 2.0 (the "License")
-** you may not use this file except in compliance with the License.
-** You may obtain a copy of the License at
-**
-**     http://www.apache.org/licenses/LICENSE-2.0
-**
-** Unless required by applicable law or agreed to in writing, software
-** distributed under the License is distributed on an "AS IS" BASIS,
-** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-** See the License for the specific language governing permissions and
-** limitations under the License.
-*/
--->
-
+<?xml version="1.0" encoding="utf-8" ?>
 <device name="Android">
-  <!-- Most values are the incremental current used by a feature,
-       in mA (measured at nominal voltage).
-       The default values are deliberately incorrect dummy values.
-       OEM's must measure and provide actual values before
-       shipping a device.
-       Example real-world values are given in comments, but they
-       are totally dependent on the platform and can vary
-       significantly, so should be measured on the shipping platform
-       with a power meter. -->
-  <item name="ambient.on">0.1</item>  <!-- ~100mA -->
-  <item name="screen.on">0.1</item>  <!-- ~100mA -->
-  <item name="screen.full">0.1</item>  <!-- ~100mA -->
-  <item name="bluetooth.active">0.1</item> <!-- Bluetooth data transfer, ~10mA -->
-  <item name="bluetooth.on">0.1</item>  <!-- Bluetooth on & connectable, but not connected, ~0.1mA -->
-  <item name="wifi.on">0.1</item>  <!-- ~3mA -->
-  <item name="wifi.active">0.1</item>  <!-- WIFI data transfer, ~200mA -->
-  <item name="wifi.scan">0.1</item>  <!-- WIFI network scanning, ~100mA -->
-  <item name="audio">0.1</item> <!-- ~10mA -->
-  <item name="video">0.1</item> <!-- ~50mA -->
-  <item name="camera.flashlight">0.1</item> <!-- Avg. power for camera flash, ~160mA -->
-  <item name="camera.avg">0.1</item> <!-- Avg. power use of camera in standard usecases, ~550mA -->
-  <item name="gps.on">0.1</item> <!-- ~50mA -->
-
-  <!-- Radio related values. For modems without energy reporting support in firmware, use
-       radio.active, radio.scanning, and radio.on. -->
-  <item name="radio.active">0.1</item> <!-- ~200mA -->
-  <item name="radio.scanning">0.1</item> <!-- cellular radio scanning for signal, ~10mA -->
-  <!-- Current consumed by the radio at different signal strengths, when paging -->
-  <array name="radio.on"> <!-- Strength 0 to BINS-1 -->
-      <value>0.2</value> <!-- ~2mA -->
-      <value>0.1</value> <!-- ~1mA -->
-  </array>
-
-  <!-- A list of heterogeneous CPU clusters, where the value for each cluster represents the
-       number of CPU cores for that cluster.
-
-       Ex:
-       <array name="cpu.clusters.cores">
-         <value>4</value> // cluster 0 has cpu0, cpu1, cpu2, cpu3
-         <value>2</value> // cluster 1 has cpu4, cpu5
-       </array> -->
-  <array name="cpu.clusters.cores">
-      <value>1</value> <!-- cluster 0 has cpu0 -->
-  </array>
-
-    <!-- Different CPU speeds for cluster 0 as reported in
-       /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state.
-
-       There must be one of these for each cluster, labeled:
-       cpu.speeds.cluster0, cpu.speeds.cluster1, etc... -->
-  <array name="cpu.speeds.cluster0">
-      <value>400000</value> <!-- 400 MHz CPU speed -->
-  </array>
-
-  <!-- Current at each CPU speed for cluster 0, as per 'cpu.speeds.cluster0'.
-       Like cpu.speeds.cluster0, there must be one of these present for
-       each heterogeneous CPU cluster. -->
-  <array name="cpu.active.cluster0">
-      <value>0.1</value>  <!-- ~100mA -->
-  </array>
-
-  <!-- Current when CPU is idle -->
-  <item name="cpu.idle">0.1</item>
-
-  <!-- Memory bandwidth power values in mA at the rail. There must be one value
-       for each bucket defined in the device tree. -->
-  <array name="memory.bandwidths">
-    <value>22.7</value> <!-- mA for bucket: 100mb/s-1.5 GB/s memory bandwidth -->
-  </array>
-
-  <!-- This is the battery capacity in mAh (measured at nominal voltage) -->
-  <item name="battery.capacity">6000</item>
-
-  <!-- Wifi related values. -->
-  <!-- Idle Receive current for wifi radio in mA. 0 by default-->
-  <item name="wifi.controller.idle">0</item>
-  <!-- Rx current for wifi radio in mA. 0 by default-->
-  <item name="wifi.controller.rx">0</item>
-  <!-- Tx current for wifi radio in mA. 0 by default-->
-  <item name="wifi.controller.tx">0</item>
-  <!-- Current at each of the wifi Tx levels in mA. The number of tx levels varies per device
-       and is available only of wifi chipsets which support the tx level reporting. Use
-        wifi.tx for other chipsets. none by default -->
-  <array name="wifi.controller.tx_levels"> <!-- mA -->
-  </array>
-  <!-- Operating volatage for wifi radio in mV. 0 by default-->
-  <item name="wifi.controller.voltage">0</item>
-
-  <array name="wifi.batchedscan"> <!-- mA -->
-    <value>.0002</value> <!-- 1-8/hr -->
-    <value>.002</value>  <!-- 9-64/hr -->
-    <value>.02</value>   <!-- 65-512/hr -->
-    <value>.2</value>    <!-- 513-4,096/hr -->
-    <value>2</value>    <!-- 4097-/hr -->
-  </array>
-
-  <!-- Cellular modem related values. Default is 0.-->
-  <item name="modem.controller.sleep">0</item>
-  <item name="modem.controller.idle">0</item>
-  <item name="modem.controller.rx">0</item>
-  <array name="modem.controller.tx"> <!-- Strength 0 to 4 -->
-    <value>0</value>
-    <value>0</value>
-    <value>0</value>
-    <value>0</value>
-    <value>0</value>
-  </array>
-  <item name="modem.controller.voltage">0</item>
-
-  <!-- GPS related values. Default is 0.-->
-  <array name="gps.signalqualitybased"> <!-- Strength 0 to 1 -->
-    <value>0</value>
-    <value>0</value>
-  </array>
-  <item name="gps.voltage">0</item>
-
+	<item name="battery.capacity">6000</item>
+	<array name="cpu.clusters.cores">
+		<value>4</value>
+		<value>4</value>
+	</array>
+	<item name="cpu.suspend">4.65</item>
+	<item name="cpu.idle">0.52</item>
+	<item name="cpu.active">1</item>
+	<item name="cpu.cluster_power.cluster0">12.10</item>
+	<item name="cpu.cluster_power.cluster1">16.43</item>
+	<array name="cpu.core_speeds.cluster0">
+		<value>300000</value>
+		<value>614400</value>
+		<value>864000</value>
+		<value>1017600</value>
+		<value>1305600</value>
+		<value>1420800</value>
+		<value>1612800</value>
+		<value>1804800</value>
+	</array>
+	<array name="cpu.core_speeds.cluster1">
+		<value>300000</value>
+		<value>652800</value>
+		<value>902400</value>
+		<value>1056000</value>
+		<value>1401600</value>
+		<value>1536000</value>
+		<value>1612800</value>
+		<value>1804800</value>
+		<value>2016000</value>
+	</array>
+	<array name="cpu.core_power.cluster0">
+		<value>4.2</value>
+		<value>8.28</value>
+		<value>11.99</value>
+		<value>15.06</value>
+		<value>23.81</value>
+		<value>27.99</value>
+		<value>38.22</value>
+		<value>51.99</value>
+	</array>
+	<array name="cpu.core_power.cluster1">
+		<value>11.06</value>
+		<value>23.81</value>
+		<value>35.09</value>
+		<value>44.08</value>
+		<value>73.08</value>
+		<value>87.18</value>
+		<value>100.24</value>
+		<value>134.31</value>
+		<value>192.47</value>
+	</array>
+	<item name="screen.on">82.45</item>
+	<item name="screen.full">242.93</item>
+	<item name="camera.flashlight">245.859</item>
+	<item name="camera.avg">500</item>
+	<item name="video">83.29</item>
+	<item name="audio">37.41</item>
+	<item name="wifi.controller.idle">2</item>
+	<item name="wifi.controller.rx">220</item>
+	<item name="wifi.controller.tx">150</item>
+	<item name="wifi.controller.voltage">3700</item>
+	<item name="modem.controller.sleep">1</item>
+	<item name="modem.controller.idle">1</item>
+	<item name="modem.controller.rx">100</item>
+	<array name="modem.controller.tx">
+		<value>90</value>
+		<value>100</value>
+		<value>110</value>
+		<value>120</value>
+		<value>130</value>
+	</array>
+	<item name="modem.controller.voltage">3700</item>
+	<array name="gps.signalqualitybased">
+		<value>100</value>
+		<value>110</value>
+	</array>
+	<item name="gps.voltage">3700</item>
+	<item name="bluetooth.controller.idle">1</item>
+	<item name="bluetooth.controller.rx">50</item>
+	<item name="bluetooth.controller.tx">50</item>
+	<item name="bluetooth.controller.voltage">3300</item>
+	<item name="radio.active">100</item>
+	<item name="radio.scanning">95</item>
+	<array name="radio.on">
+		<value>7</value>
+		<value>5</value>
+	</array>
 </device>
